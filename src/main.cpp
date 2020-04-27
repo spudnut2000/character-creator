@@ -12,8 +12,13 @@ int main() // Main
   return 0;
 }
 
-// Function definitions
+/*
+|----------------|
+|    Functions   |
+|----------------|
+*/
 
+//--------------------------
 void mainMenu() // Main menu
 {
   int choice;
@@ -42,6 +47,7 @@ void mainMenu() // Main menu
   }
 }
 
+//--------------------------------
 int roll (int number) // Dice roll
 {
   srand(time(NULL));
@@ -49,10 +55,12 @@ int roll (int number) // Dice roll
   return result;
 }
 
+//-------------------------------------------
 void newCharacter() // Create a new character
 {
   int choice;
   cout << "\n\n---New Character---\n";
+  // Name
   cout << "[1] Random name\n[2] Custom name\n";
   cout << "Please choose an option: ";
   cin >> choice;
@@ -81,7 +89,7 @@ void newCharacter() // Create a new character
   std::this_thread::sleep_for(0.7s);
   charisma = roll(20);
   std::this_thread::sleep_for(0.7s);
-
+  // Display stats
   cout << endl;
   cout << "name: " << firstName << " " << lastName << endl;
   cout << "strength: " << strength << endl;
@@ -91,14 +99,15 @@ void newCharacter() // Create a new character
   cout << "charisma: " << charisma << endl;
 }
 
-string randomName() // Generate a random name
+//-----------------------------------------
+void randomName() // Generate a random name
 {
-  string names[] = {"bokhi", "kheli", "Deadbash", "Runewing", "narsk", "glekrusk", "Cliffbringer", "Commonwhirl", "jazdehrihd", "hiprak", "merumevzu", "vebiki", "shiang", "tie", "cohergis", "furese", "eideid", "abur", "tivum", "gee", "bebrim", "fim", "blannor", "tuth", "jod-kumu", "bun-daz", "vlomvinric", "koomzik", "tiu", "mo", "grusceldon", "chelbo"};
+  string names[] = {"Bokhi", "Kheli", "Deadbash", "Runewing", "Narsk", "Glekrusk", "Cliffbringer", "Commonwhirl", "Jazdehrihd", "Hiprak", "Merumevzu", "Vebiki", "Shiang", "Tie", "Cohergis", "Furese", "Eideid", "Abur", "Tivum", "Gee", "Bebrim", "Fim", "Blannor", "Tuth", "Jod-kumu", "Bun-daz", "Vlomvinric", "Koomzik", "Tiu", "Mo", "Grusceldon", "Chelbo"};
 
   int name_size = *(&names + 1) - names;
   firstName = names[roll(name_size)-1];
   std::this_thread::sleep_for(0.7s);
   lastName = names[roll(name_size)-1];
 
-  return "";
+  return;
 }

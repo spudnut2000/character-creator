@@ -25,4 +25,4 @@ std::string race;
 void mainMenu();
 int roll(int);
 void newCharacter();
-std::string randomName();
+void randomName();

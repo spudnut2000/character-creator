@@ -48,7 +48,7 @@ std::string classList[] =
 
 std::string raceList[] = 
 {
-    "Half-Orc", "Teifling", "Human", "Elf", "Half-Elf", "Dragonborn", "Gnome", "Halfling", "Dwarf"
+    "Half-Orc", "Teifling", "Human", "Elf", "Half-Elf", "Dragonborn", "Gnome", "Halfling", "Dwarf", "Knoll", "Wood Elf", "Drow", "High Elf"
 };
 
 std::string allignmentList[] =
@@ -72,4 +72,4 @@ void randomClass();
 void randomRace();
 void randomStats();
 void randomAllignment();
-void makeModifier();
+int makeModifier(int);

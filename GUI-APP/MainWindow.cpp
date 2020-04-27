@@ -36,14 +36,14 @@ void MainWindow::On_btn_newCharacter_Clicked(wxCommandEvent &evt)
 {
   newCharacter();
   list_statBox->AppendString("Name: " + fullName);
-  list_statBox->AppendString("Strength: " + std::to_string(strength));
-  list_statBox->AppendString("Dexterity: " + std::to_string(dexterity));
-  list_statBox->AppendString("Intelligence: " + std::to_string(intelligence));
-  list_statBox->AppendString("Wisdom: " + std::to_string(wisdom));
-  list_statBox->AppendString("Charisma: " + std::to_string(charisma));
   list_statBox->AppendString("Race: " + race);
   list_statBox->AppendString("Primary class: " + primaryClass);
   list_statBox->AppendString("Allignment: " + allignment);
+  list_statBox->AppendString("Strength: " + std::to_string(strength) + " [" + std::to_string(makeModifier(strength)) + "]");
+  list_statBox->AppendString("Dexterity: " + std::to_string(dexterity) + " [" + std::to_string(makeModifier(dexterity)) + "]");
+  list_statBox->AppendString("Intelligence: " + std::to_string(intelligence) + " [" + std::to_string(makeModifier(intelligence)) + "]");
+  list_statBox->AppendString("Wisdom: " + std::to_string(wisdom) + " [" + std::to_string(makeModifier(wisdom)) + "]");
+  list_statBox->AppendString("Charisma: " + std::to_string(charisma) + " [" + std::to_string(makeModifier(charisma)) + "]");
   list_statBox->AppendString("");
 }
 
@@ -98,4 +98,75 @@ void randomAllignment()
 {
     allignment = allignmentList[roll(allignmentList_size)-1];
 
+}
+
+int makeModifier(int num)
+{
+  int result;
+  switch (num)
+  {
+  case 1:
+    result = -5;
+    break;
+  case 2:
+    result = -4;
+    break;
+  case 3:
+    result = -4;
+    break;
+  case 4:
+   result = -3;
+   break;
+  case 5:
+    result = -3;
+    break;
+  case 6:
+    result = -2;
+    break;
+  case 7:
+    result = -2;
+    break;
+  case 8:
+   result = -1;
+   break;
+  case 9:
+    result = -1;
+    break;
+  case 10:
+    result = 0;
+    break;
+  case 11:
+    result = 0;
+    break;
+  case 12:
+    result = 1;
+    break;
+  case 13:
+    result = 1;
+    break;
+  case 14:
+    result = 2;
+    break;
+  case 15:
+    result = 2;
+    break;
+  case 16:
+    result = 3;
+    break;
+  case 17:
+    result = 3;
+    break;
+  case 18:
+    result = 4;
+    break;
+  case 19:
+    result = 4;
+    break;
+  case 20:
+    result = 5;
+    break;
+  default:
+    break;
+  }
+  return result;
 }
